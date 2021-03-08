@@ -1,4 +1,4 @@
-# Incremental-Cache-Benchmark-Cuda
+# Incremental Cache Benchmark Cuda
 Computes an array of fixed length with CPU and GPU to execute sequential accesses and stress the cache. This benchmark should be used in conjunction with "nvprof" and an incremental load, obtained by increasing the size of the array section computed from 1/4000 (for Xavier, 1/16000 on TX2), to 1/1.
 ## Usage
 Simply compile by running the compile script (currently configured for Volta/Xavier) on a Jetson Board:
