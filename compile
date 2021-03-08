@@ -1,0 +1,4 @@
+#!/bin/bash
+DIR=`dirname $0`
+
+nvcc -w -Xcompiler "-fopenmp" -std=c++11 -arch=sm_72 "$DIR"/inc_bench.cu -I"$DIR"/include -o as
