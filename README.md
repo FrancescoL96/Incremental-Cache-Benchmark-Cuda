@@ -1,4 +1,5 @@
 # Incremental-Cache-Benchmark-Cuda
+Computes an array of fixed length with CPU and GPU to execute sequential accesses and stress the cache. This benchmark should be used in conjunction with "nvprof" and an incremental load, obtained by increasing the size of the array section computed from 1/4000 (for Xavier, 1/16000 on TX2), to 1/1.
 ## Usage
 Simply compile by running the compile script (currently configured for Volta/Xavier) on a Jetson Board:
 ```
@@ -7,6 +8,10 @@ Simply compile by running the compile script (currently configured for Volta/Xav
 and then run with
 ```
 ./inc_bench <SPLIT_SIZE>
+```
+and 
+```
+nvprof --metrics l2_read_throughput,l2_write_throughput ./inc_bench <SPLIT_SIZE>
 ```
 Where split size is the Array section length (higher value means lower computed length).
 ## Configuration
